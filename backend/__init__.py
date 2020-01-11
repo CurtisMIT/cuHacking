@@ -9,8 +9,8 @@ def create_app(test_config=None):
         SECRET_KEY='dev'
     )
 
-    @app.route('/')
-    def hello():
-        return 'hellooooooo'
+    from .main import main as main_blueprint
+
+    app.register_blueprint(main_blueprint)
     
     return app

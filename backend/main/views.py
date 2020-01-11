@@ -1,0 +1,9 @@
+import os
+from flask import Flask, jsonify, request, abort, make_response
+from . import main
+
+@main.route("/", methods=["GET"])
+def index():
+    return 'hello world'
+
+
